@@ -1,0 +1,461 @@
+.header {
+    width: 100%;
+}
+
+.fax-header {
+    position: relative;
+    height: 50%;
+    width: 100%;
+    padding: 50px 0;
+    background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(/images/capitol.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.fax-logo {
+    width: 50%;
+    height: 50%;
+    overflow: auto;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.spacing-15 {
+    padding: 15px;
+}
+
+.spacing-25 {
+    padding: 25px;
+}
+
+.spacing-50 {
+    padding: 50px;
+}
+
+.spacing-75 {
+    padding: 75px;
+}
+
+.spacing-100 {
+    padding: 100px;
+}
+
+.spacing-125 {
+    padding: 125px;
+}
+
+.spacing-150 {
+    padding: 150px;
+}
+
+.spacing-200 {
+    padding: 200px;
+}
+
+.spacing-250 {
+    padding: 250px;
+}
+
+.table-fixed thead {
+    width: 100%;
+}
+
+.table-fixed tbody {
+    height: 230px;
+    overflow-y: auto;
+    width: 100%;
+}
+
+.table-fixed thead,.table-fixed tbody,.table-fixed tr,.table-fixed td,.table-fixed th {
+    display: block;
+}
+
+.table-fixed tbody td,.table-fixed thead > tr> th {
+    float: left;
+    border-bottom-width: 0;
+    background-color: inherit;
+}
+
+.table > tbody > tr > td {
+    border-top-color: #969696;
+    text-align: left;
+}
+
+.selected {
+    font-weight: bolder;
+}
+
+#tableFilters > .form-group {
+    margin-bottom: 0;
+}
+
+.filterCheckbox {
+    height: 34px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.filterCheckbox > label {
+    margin-bottom: 0;
+}
+
+.ng-valid.ng-dirty {
+    border-color: green;
+}
+
+.ng-invalid.ng-dirty {
+    border-color: red;
+}
+
+p {
+    margin: 0 0 25px;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+@media (min-width: 768px) {
+    p {
+        margin: 0 0 35px;
+        font-size: 20px;
+        line-height: 1.6;
+    }
+}
+
+a {
+    color: #42DCA3;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+
+a:hover,a:focus {
+    text-decoration: none;
+    color: #1d9b6c;
+}
+
+.light {
+    font-weight: 400;
+}
+
+.navbar-custom {
+    margin-bottom: 0;
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+    text-transform: uppercase;
+    font-family: "Montserrat","Helvetica Neue",Helvetica,Arial,sans-serif;
+    background-color: #000;
+}
+
+.navbar-custom .navbar-toggle {
+    color: #fff;
+    background-color: rgba(255,255,255,0.2);
+    font-size: 12px;
+}
+
+.navbar-custom .navbar-toggle:focus,.navbar-custom .navbar-toggle:active {
+    outline: none;
+}
+
+.navbar-custom .navbar-brand {
+    font-weight: 700;
+}
+
+.navbar-custom .navbar-brand:focus {
+    outline: none;
+}
+
+.navbar-custom a {
+    color: #fff;
+}
+
+.navbar-custom .nav li a {
+    -webkit-transition: background .3s ease-in-out;
+    -moz-transition: background .3s ease-in-out;
+    transition: background .3s ease-in-out;
+}
+
+.navbar-custom .nav li a:hover {
+    color: rgba(255,255,255,0.8);
+    outline: none;
+    background-color: transparent;
+}
+
+.navbar-custom .nav li a:focus,.navbar-custom .nav li a:active {
+    outline: none;
+    background-color: transparent;
+}
+
+.navbar-custom .nav li.active {
+    outline: none;
+}
+
+.navbar-custom .nav li.active a {
+    background-color: rgba(255,255,255,0.3);
+}
+
+.navbar-custom .nav li.active a:hover {
+    color: #fff;
+}
+
+@media (min-width: 768px) {
+    .navbar-custom {
+        padding: 20px 0;
+        border-bottom: none;
+        letter-spacing: 1px;
+        background: transparent;
+        -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
+        -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
+        transition: background .5s ease-in-out,padding .5s ease-in-out;
+    }
+
+    .navbar-custom.top-nav-collapse {
+        padding: 0;
+        background: #000;
+        border-bottom: 1px solid rgba(255,255,255,0.3);
+    }
+}
+
+.intro-img {
+	height: 65%;
+	width: 65%;
+}
+
+.intro {
+	position: relative;
+    display: table;
+    width: 100%;
+    height: auto;
+    padding: 100px 0;
+    text-align: center;
+    color: #fff;
+    background:     
+    linear-gradient(
+      rgba(0, 0, 0, 0.5), 
+      rgba(0, 0, 0, 0.5)
+    ),url(https://s3-us-west-2.amazonaws.com/fax2dc/dc.jpg) no-repeat bottom center scroll;
+    background-color: #000;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+.intro .intro-body {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.intro .intro-body .brand-heading {
+    font-size: 40px;
+}
+
+.intro .intro-body .intro-text {
+    font-size: 25px;
+    font-weight: bold;
+    color: #fff;
+    text-transform: capitalize;
+}
+
+@media (min-width: 768px) {
+    .intro {
+        height: 100%;
+        padding: 0;
+    }
+
+    .intro .intro-body .brand-heading {
+        font-size: 100px;
+    }
+
+    .intro .intro-body .intro-text {
+        font-size: 26px;
+    }
+}
+
+.btn-circle {
+    width: 70px;
+    height: 70px;
+    margin-top: 15px;
+    padding: 7px 16px;
+    border: 2px solid #fff;
+    border-radius: 100% !important;
+    font-size: 40px;
+    color: #fff;
+    background: transparent;
+    -webkit-transition: background .3s ease-in-out;
+    -moz-transition: background .3s ease-in-out;
+    transition: background .3s ease-in-out;
+}
+
+.btn-circle:hover,.btn-circle:focus {
+    outline: none;
+    color: #fff;
+    background: rgba(255,255,255,0.1);
+}
+
+.btn-circle i.animated {
+    -webkit-transition-property: -webkit-transform;
+    -webkit-transition-duration: 1s;
+    -moz-transition-property: -moz-transform;
+    -moz-transition-duration: 1s;
+}
+
+.btn-circle:hover i.animated {
+    -webkit-animation-name: pulse;
+    -moz-animation-name: pulse;
+    -webkit-animation-duration: 1.5s;
+    -moz-animation-duration: 1.5s;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    -moz-animation-timing-function: linear;
+}
+
+@-webkit-keyframes pulse {
+    0 {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+
+    50% {
+        -webkit-transform: scale(1.2);
+        transform: scale(1.2);
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+@-moz-keyframes pulse {
+    0 {
+        -moz-transform: scale(1);
+        transform: scale(1);
+    }
+
+    50% {
+        -moz-transform: scale(1.2);
+        transform: scale(1.2);
+    }
+
+    100% {
+        -moz-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+.content-section {
+    padding-top: 100px;
+}
+
+.about-section {
+    width: 100%;
+    padding: 50px 0;
+    color: #fff;
+    background: url(../img/abouts-bg.jpg) no-repeat center center scroll;
+    background-color: #000;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+#map {
+    width: 100%;
+    height: 200px;
+    margin-top: 100px;
+}
+
+@media (min-width: 767px) {
+    .content-section {
+        padding-top: 100px;
+    }
+
+    .about-section {
+        padding: 100px 0;
+    }
+
+}
+
+.btn {
+    text-transform: uppercase;
+    font-family: "Montserrat","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 400;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    border-radius: 0;
+}
+
+.btn-default {
+    border: 1px solid #42DCA3;
+    color: #42DCA3;
+    background-color: transparent;
+}
+
+.btn-default:hover,.btn-default:focus {
+    border: 1px solid #42DCA3;
+    outline: none;
+    color: #000;
+    background-color: #42DCA3;
+}
+
+ul.banner-social-buttons {
+    margin-top: 0;
+}
+
+@media (max-width: 1199px) {
+    ul.banner-social-buttons {
+        margin-top: 15px;
+    }
+}
+
+@media (max-width: 767px) {
+    ul.banner-social-buttons li {
+        display: block;
+        margin-bottom: 20px;
+        padding: 0;
+    }
+
+    ul.banner-social-buttons li:last-child {
+        margin-bottom: 0;
+    }
+}
+
+footer {
+    padding: 50px 0;
+}
+
+footer p {
+    margin: 0;
+}
+
+::-moz-selection {
+    text-shadow: none;
+    background: #fcfcfc;
+    background: rgba(255,255,255,0.2);
+}
+
+::selection {
+    text-shadow: none;
+    background: #fcfcfc;
+    background: rgba(255,255,255,0.2);
+}
+
+img::selection {
+    background: transparent;
+}
+
+img::-moz-selection {
+    background: transparent;
+}
+
+body {
+    webkit-tap-highlight-color: rgba(255,255,255,0.2);
+}

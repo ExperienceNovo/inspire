@@ -1,0 +1,8 @@
+node_modules/*
+.tmp/
+.idea/
+.DS_Store
+.csr
+.key
+.pass
+.pass.key
