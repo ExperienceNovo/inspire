@@ -1,9 +1,5 @@
-# Fax2DC
+# inspire
 
-###### fax your representatives in congress 
+###### breate easy
 
-https://fax2dc.herokuapp.com
-
-http://www.fax2dc.com
-
-http://www.faxtodc.com
+a smart incentive spirometer
