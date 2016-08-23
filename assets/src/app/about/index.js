@@ -13,6 +13,6 @@ angular.module( 'inspire.about', [
 	});
 })
 
-.controller( 'AboutCtrl', [ '$http', '$scope', 'titleService', function AboutController( $http, $scope, titleService ) {
+.controller( 'AboutCtrl', ['$http', '$scope', 'titleService', function AboutController( $http, $scope, titleService ) {
 	titleService.setTitle('About - inspire');
 }]);

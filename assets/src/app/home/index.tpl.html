@@ -1,15 +1,17 @@
+<link href="//db.onlinewebfonts.com/c/38025932dce48e268882d955f7a66826?family=Alte+Haas+Grotesk" rel="stylesheet" type="text/css"/>
 <style>
 #container {
-  height: 400px;
+  max-height: 400px;
   width: 400px;
   position: relative;
+  //background-color:rgb(200,200,200);
 }
 #image {
   position: absolute;
   left: 0;
   top: 0;
 }
-#text {
+#splash {
   z-index: 100;
   position: absolute;
   color: white;
@@ -18,11 +20,15 @@
   left: 150px;
   top: 350px;
 }
+#font{
+  font-family: Alte Haas Grotesk, sans-serif;
+}
 </style>
+
 <div id="container">
 	<img src="images/IncentiveSpirometer.jpg">
-	<div id="text">
-		<h1>inspire</h1>
+	<div id="splash">
+		<h1 id="font">inspire</h1>
 		<p>breathe easy.</p><br>
 	</div>
 </div>
