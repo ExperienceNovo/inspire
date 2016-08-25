@@ -8,7 +8,6 @@ angular.module( 'inspire', [
     'templates-app',
     'services',
     'models',
-    'inspire.about',
     'inspire.home'
 ])
 

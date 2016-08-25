@@ -7,7 +7,7 @@
     height: 50%;
     width: 100%;
     padding: 50px 0;
-    background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(/images/capitol.jpg);
+    background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(/images/inspire.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -238,7 +238,7 @@ a:hover,a:focus {
     linear-gradient(
       rgba(0, 0, 0, 0.5), 
       rgba(0, 0, 0, 0.5)
-    ),url(https://s3-us-west-2.amazonaws.com/fax2dc/dc.jpg) no-repeat bottom center scroll;
+    ),url(/images/inspire.jpg) no-repeat bottom center scroll;
     background-color: #000;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -358,8 +358,8 @@ a:hover,a:focus {
     width: 100%;
     padding: 50px 0;
     color: #fff;
-    background: url(../img/abouts-bg.jpg) no-repeat center center scroll;
-    background-color: #000;
+    //background: url(../img/abouts-bg.jpg) no-repeat center center scroll;
+    background-color: #126ddf;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
