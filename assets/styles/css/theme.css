@@ -16,7 +16,6 @@
 html,body {
 	height:100%;
 	-webkit-overflow-scrolling: touch!important;
-	overflow-x:hidden!important;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	text-rendering: optimizelegibility;

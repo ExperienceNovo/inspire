@@ -2,6 +2,7 @@ angular.module( 'inspire', [
     'ui.router',
     'sails.io',
     'angularMoment',
+    'duScroll',
     'lodash',
     'ui.bootstrap',
     'uiGmapgoogle-maps',
