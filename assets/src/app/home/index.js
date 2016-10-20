@@ -1,7 +1,7 @@
 angular.module( 'inspire.home', [
 ])
 
-.config(function config( $stateProvider ) {
+.config(['$stateProvider', function config( $stateProvider ) {
 	$stateProvider.state( 'home', {
 		url: '/',
 		views: {
@@ -11,7 +11,7 @@ angular.module( 'inspire.home', [
 			}
 		}
 	});
-})
+}])
 
 .controller( 'HomeCtrl', [ '$http', '$scope', 'titleService', function HomeController( $http, $scope, titleService ) {
 	titleService.setTitle('inspire');
