@@ -12,7 +12,7 @@ angular.module( 'inspire', [
     'inspire.home'
 ])
 
-.config( function myAppConfig ( $stateProvider, $urlRouterProvider, $locationProvider ) {
+.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function myAppConfig ( $stateProvider, $urlRouterProvider, $locationProvider ) {
     $urlRouterProvider.when('/about/', '/about');
     $urlRouterProvider.otherwise(function ($injector, $location) {
         if ($location.$$url === '/') {
@@ -24,13 +24,13 @@ angular.module( 'inspire', [
         }
     });
     $locationProvider.html5Mode(true);
-})
+}])
 
 .run( function run () {
     moment.locale('en');
 })
 
-.controller( 'AppCtrl', function AppCtrl ( $scope, config, $rootScope) {
+.controller( 'AppCtrl',['$scope', 'config', '$rootScope', function AppCtrl ( $scope, config, $rootScope) {
     config.currentUser = window.currentUser;
-});
+}]);
 

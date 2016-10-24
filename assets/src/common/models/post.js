@@ -1,6 +1,6 @@
 angular.module('models.post', ['lodash', 'services', 'sails.io',])
 
-.service('PostModel', function(lodash, utils, $sailsSocket) {
+.service('PostModel',['lodash', 'utils', '$sailsSocket', function(lodash, utils, $sailsSocket) {
     this.getAll = function() {
         var url = utils.prepareUrl('post');
         return $sailsSocket.get(url).then(success, error);
@@ -28,4 +28,4 @@ angular.module('models.post', ['lodash', 'services', 'sails.io',])
     var error = function(error) {
         console.log(error);
     };
-});
+}]);

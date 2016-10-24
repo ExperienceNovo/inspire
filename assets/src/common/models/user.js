@@ -1,6 +1,6 @@
 angular.module('models.user', ['lodash', 'services', 'sails.io',])
 
-.service('UserModel', function($q, lodash, utils, $sailsSocket, $location, $rootScope) {
+.service('UserModel',['$q', 'lodash', 'utils', '$sailsSocket', '$location', '$rootScope', function($q, lodash, utils, $sailsSocket, $location, $rootScope) {
     this.getAll = function() {
         var url = utils.prepareUrl('user');
         return $sailsSocket.get(url).then(success, error);
@@ -44,4 +44,4 @@ angular.module('models.user', ['lodash', 'services', 'sails.io',])
     var error = function(error) {
         console.log(error);
     };
-});
+}]);
