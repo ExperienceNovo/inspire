@@ -13,6 +13,6 @@ angular.module( 'inspire.home', [
 	});
 }])
 
-.controller( 'HomeCtrl', [ '$http', '$scope', 'titleService', function HomeController( $http, $scope, titleService ) {
+.controller( 'HomeCtrl', [ '$scope', 'titleService', function HomeController( $scope, titleService ) {
 	titleService.setTitle('inspire');
 }]);

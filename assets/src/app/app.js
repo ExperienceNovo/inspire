@@ -9,7 +9,10 @@ angular.module( 'inspire', [
     'templates-app',
     'services',
     'models',
-    'inspire.home'
+    'inspire.dashboard',
+    'inspire.home',
+    'inspire.login',
+    'inspire.register',
 ])
 
 .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function myAppConfig ( $stateProvider, $urlRouterProvider, $locationProvider ) {
