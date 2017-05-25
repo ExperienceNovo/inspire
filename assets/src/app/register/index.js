@@ -1,4 +1,4 @@
-angular.module( 'inspire.home', [
+angular.module( 'inspire.register', [
 ])
 
 .config(['$stateProvider', function config( $stateProvider ) {
