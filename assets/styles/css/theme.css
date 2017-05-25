@@ -20,7 +20,6 @@ html,body {
 	-moz-osx-font-smoothing: grayscale;
 	text-rendering: optimizelegibility;
 	color:#000;
-	text-align:center;
 	margin:0;
 	padding:0;
 	cursor:default;
@@ -73,7 +72,6 @@ html,body {
 
 .footer {
 	position:relative;
-	text-align: center;
 	font-family:'Quicksand',sans-serif;
 	z-index:50;
 	width:100%;
@@ -188,7 +186,6 @@ a:hover, a:focus {
 	font-size:1.3em;
 	margin-right:auto;
 	margin-left:auto;
-	text-align:center;
 	font-family:'Quicksand',sans-serif
 }
 
