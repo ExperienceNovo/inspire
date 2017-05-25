@@ -2,7 +2,7 @@ angular.module( 'inspire.login', [
 ])
 
 .config(['$stateProvider', function config( $stateProvider ) {
-	$stateProvider.state( 'home', {
+	$stateProvider.state( 'login', {
 		url: '/login',
 		views: {
 			"main": {
