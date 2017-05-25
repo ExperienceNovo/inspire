@@ -259,7 +259,6 @@ a:hover,a:focus {
     font-size: 25px;
     font-weight: bold;
     color: #fff;
-    text-transform: capitalize;
 }
 
 @media (min-width: 768px) {
