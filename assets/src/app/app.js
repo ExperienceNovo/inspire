@@ -10,6 +10,7 @@ angular.module( 'inspire', [
     'services',
     'models',
     'inspire.dashboard',
+    'inspire.footer',
     'inspire.home',
     'inspire.login',
     'inspire.register',
