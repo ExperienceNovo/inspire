@@ -33,10 +33,6 @@ module.exports.routes = {
   ***************************************************************************/
 
   'get /': 'HomeController.index',
-  'get /admin': 'HomeController.index',
-  'get /about': 'HomeController.index',
-  'get /donate': 'HomeController.index',
-  'get /fax/:id': 'HomeController.index',
 
   'get /login': 'HomeController.index',
   'get /logout': 'AuthController.logout',
@@ -46,28 +42,18 @@ module.exports.routes = {
   'post /auth/local/:action': 'AuthController.callback',
 
   /**
+   * Reading routes
+   */
+  'get /api/reading': 'ReadingController.getSome',
+  'post /api/reading': 'ReadingController.create',
+
+  /**
    * User routes
    */
   'get /api/user': 'UserController.getAll',
   'get /api/user/:id': 'UserController.getOne',
   'get /api/user/username/:path': 'UserController.getByUsername',
   'post /api/user': 'UserController.create',
-
-  /**
-   * Fax routes
-   */
-  'get /api/fax': 'FaxController.getAll',
-  'get /api/fax/count': 'FaxController.getCount',
-  'get /api/fax/unapproved': 'FaxController.getUnapproved',
-  'post /api/fax/update': 'FaxController.update',
-  'post /api/fax': 'FaxController.create',
-  'get /api/fax/:id': 'FaxController.getOne',
-
-  /**
-   * Legislator routes
-   */
-  'get /api/legislator': 'LegislatorController.getAll',
-
 
   // If a request to a URL doesn't match any of the custom routes above, it is matched
   // against Sails route blueprints.  See `config/blueprints.js` for configuration options

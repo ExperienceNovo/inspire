@@ -3,9 +3,6 @@ module.exports = {
 		User.getAll()
 		.spread(function(models) {
 			res.json(models);
-		})
-		.fail(function(err) {
-			// An error occured
 		});
 	},
 
@@ -13,9 +10,6 @@ module.exports = {
 		User.getOne(req.param('id'))
 		.spread(function(model) {
 			res.json(model);
-		})
-		.fail(function(err) {
-			// res.send(404);
 		});
 	},
 
@@ -35,9 +29,8 @@ module.exports = {
 		var model = {
 			username: req.param('username'),
 			email: req.param('email'),
-			first_name: req.param('first_name')
+			firstName: req.param('firstName')
 		};
-
 		User.create(model)
 		.exec(function(err, model) {
 			if (err) {

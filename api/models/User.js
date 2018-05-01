@@ -12,11 +12,11 @@ module.exports = {
         },
         firstName: {
             type: 'string',
-            required: true
+            //required: true
         },
         lastName: {
             type: 'string',
-            required: true
+            //required: true
         },
         passports : { collection: 'Passport', via: 'user' }
     },
