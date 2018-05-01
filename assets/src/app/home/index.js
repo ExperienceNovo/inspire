@@ -67,11 +67,13 @@ angular.module( 'inspire.home', [
 		$scope.time++;
 
 		$scope.timeChart.series[0].data.push([$scope.time, $scope.volume*100]);
-		$scope.timeChart.series[1].data.push([$scope.time, $scope.volume*$scope.currentDecible*100]);
+		$scope.timeChart.series[1].data.push([$scope.time, $scope.volume*Math.random()*100]);
 
+		//IF LENGETH IS > N // remove end elements
 
 		if ($scope.volume*100 > 10){
 			$scope.thresholdTime++;
+			//TODO: GRAPH THRESHOLD TIME
 		}
 		else{
 
