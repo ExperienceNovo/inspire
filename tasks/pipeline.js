@@ -15,7 +15,8 @@
 // (if you're using LESS with the built-in default config, you'll want
 //  to change `assets/styles/importer.less` instead.)
 var cssFilesToInject = [
-  'styles/**/*.css'
+  'styles/**/*.css',
+  'bower_components/highcharts-ng/dist/highcharts-ng.css',
 ];
 
 
@@ -36,7 +37,9 @@ var jsFilesToInject = [
   'bower_components/angular-scroll/angular-scroll.js',
   'bower_components/bootstrap/dist/js/bootstrap.js',
 
-
+  //TODO: DEPENDENCY FACTOR
+  'bower_components/highcharts/highstock.js',
+  'bower_components/highcharts-ng/dist/highcharts-ng.js',
 
   //
   // *->    you might put other dependencies like jQuery or Angular here   <-*

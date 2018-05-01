@@ -14,5 +14,5 @@ angular.module( 'inspire.dashboard', [
 }])
 
 .controller( 'DashboardCtrl', [ '$scope', 'titleService', function HomeController( $scope, titleService ) {
-	titleService.setTitle('Dashboard - inspire');
+	titleService.setTitle('Dashboard | inspire');
 }]);

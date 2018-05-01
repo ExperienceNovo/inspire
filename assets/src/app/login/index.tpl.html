@@ -1,105 +1,45 @@
-<link href="//db.onlinewebfonts.com/c/38025932dce48e268882d955f7a66826?family=Alte+Haas+Grotesk" rel="stylesheet" type="text/css"/>
-<style>
-.intro-text{
-    font-family: Alte Haas Grotesk, sans-serif;
-}
-/*h1{
-  font-family: Alte Haas Grotesk, sans-serif;
-}
-h2{
-  font-family: Alte Haas Grotesk, sans-serif;
-}
-p{
-  font-family: Alte Haas Grotesk, sans-serif;
-}*/
-</style>
-
-<header class="intro">
-    <div class="intro-body">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2">
-                    <img class="intro-img" src="images/inspire.png">
-                    <div class="spacing-15"></div>
-                    <p class="intro-text">inspire<br><br>breathe easy.</p>
-                    <a href="#about" class="btn btn-circle page-scroll" du-smooth-scroll>
-                        <i class="fa fa-angle-double-down animated"></i>
-                    </a>
+<div class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1 class="blue-title">Login</h1>
+                    <h2 class="post-title">
+                        Welcome back!
+                    </h2>
                 </div>
             </div>
         </div>
     </div>
-</header>
-
-<section id="about" class="container content-section text-center">
-  <div class="container">
-        <div class="col-lg-8 col-lg-offset-2">
-            <h2>Inspire</h2>
-            <p>breathe easy, our smart incentive spirometer improves your health</p>
-        </div>
-        <div class="col-md-4">
-            <h1 style="color:black">Smart</h1>
-        </div>
-        <div class="col-md-4">
-            <h1 style="color:black">The Problem</h1>
-        </div>
-        <div class="col-md-4">
-            <h1 style="color:black">Smart</h1>
-        </div>
-    </div>
-</section>
-
-<section id="about-1" class="content-section text-center">
-    <div class="about-section">
-        <div class="container">
-            <div class="col-lg-8 col-lg-offset-2">
-                <h2>Inspire</h2>
-                <p style="color:white">breathe easy, our smart incentive spirometer improves your health</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="contact" class="container content-section text-center">
+</div>
+<div class="container">
     <div class="row">
-        <div class="col-lg-8 col-lg-offset-2">
-            <h2>iPhone, Android</h2>
-            <p>etc etc etc</p>
-        </div>
-        <div class="col-md-4">
-            <h1 style="color:black">Gamify</h1>
-        </div>
-        <div class="col-md-4">
-            <h1 style="color:black">Improve</h1>
-        </div>
-        <div class="col-md-4">
-            <h1 style="color:black">Credible</h1>
-        </div>
-        <!--<div class="col-lg-8 col-lg-offset-2">
-            <button class="btn">purchase</button>
-            <div class="purchase-area">-->
-                <!--product selection form-->
-                <!--shipping information form-->
-                <!--stripe payment form-->
-                <!--download link(s)-->
-            <!--</div>
-        </div>-->
-    </div>
-    <div class="spacing-50"></div>
-
-</section>
-
-
-<section id="about-2" class="content-section text-center">
-    <div class="about-section">
-        <div class="container">
-            <div class="col-lg-8 col-lg-offset-2">
-              2016 inspire.com
+        <div class="col-md-10 col-md-offset-1">
+            <div class="login-form">
+                <form role="form" method="post" action="/auth/local">
+                    <div class="form-group">
+                        <input class="form-control" name="identifier" placeholder="Email or Username" title="username" type="text"> 
+                        <i class="fa fa-user"></i>
+                    </div>
+                    <div class="form-group log-status">
+                        <input class="form-control" type="password" name="password" placeholder="Password" title="password"> 
+                        <i class="fa fa-lock"></i>
+                    </div>
+                    <div class="align-right">
+                        <button class="btn btn-default log-btn" type="submit" value="submit">Sign in</button>
+                    </div>
+                    <br><br>
+                    <div class="social-log">
+                        <a class="btn btn-social btn-facebook" href=""><i class="fa fa-facebook"></i> Facebook</a>
+                        <a class="btn btn-social btn-twitter" href=""><i class="fa fa-twitter"></i> Twitter</a>
+                        <a class="btn btn-social btn-google" href=""><i class="fa fa-google"></i> Google</a>
+                    </div>
+                    <br><hr>
+                    <div class="social-log">
+                        <a style="text-align:center" href="/register">Need an account?</a>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
-</section>
-
-
-
-
+</div>

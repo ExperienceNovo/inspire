@@ -9,6 +9,7 @@ angular.module( 'inspire', [
     'templates-app',
     'services',
     'models',
+    'highcharts-ng',
     'inspire.dashboard',
     'inspire.footer',
     'inspire.home',
@@ -19,13 +20,8 @@ angular.module( 'inspire', [
 .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function myAppConfig ( $stateProvider, $urlRouterProvider, $locationProvider ) {
     $urlRouterProvider.when('/about/', '/about');
     $urlRouterProvider.otherwise(function ($injector, $location) {
-        if ($location.$$url === '/') {
-            window.location = '/';
-        }
-        else {
-            // pass through to let the web server handle this request
-            window.location = $location.$$absUrl;
-        }
+        if ($location.$$url === '/') {window.location = '/';}
+        else {window.location = $location.$$absUrl;}
     });
     $locationProvider.html5Mode(true);
 }])
