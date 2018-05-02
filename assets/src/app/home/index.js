@@ -133,7 +133,7 @@ angular.module( 'inspire.home', [
 					var newReading = {};
 					newReading.user = $scope.currentUser.id;
 					newReading.time = $scope.thresholdTime;
-					newReading.createdAt = new Date();;
+					newReading.createdAt = new Date();
 					//ReadingModel.create($scope.newReading).then(function(){
 						$scope.readings.push(newReading);
 					//});
