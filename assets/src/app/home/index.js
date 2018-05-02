@@ -145,7 +145,7 @@ angular.module( 'inspire.home', [
 
 		};
 
-		$timeout(function() { $interval($scope.addTime, 100); }, 2000);
+		//$timeout(function() { $interval($scope.addTime, 100); }, 2000);
 
 	    $scope.start = function(){
 			$interval($scope.addTime, 100);
