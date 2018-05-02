@@ -6,16 +6,35 @@
 </style>
 
 <div ng-show="currentUser" style="min-height:80%">
-    <div class="spacing-50"></div>
+    <div class="spacing-25"></div>
     <div class="container">
         <h3>INSPIRE</h3>
-        <highchart config="timeChart"></highchart>
+        <!--<div class="col-xs-10">-->
+            <highchart config="timeChart"></highchart>
+        <!--</div>-->
+        <!--<div class="col-xs-2">
+            <highchart config="thresholdChart"></highchart>
+        </div>-->
         <button class="btn btn-default log-btn" ng-click="start()">START</button>
         <div class="spacing-15"></div>
         <h5>Readings</h5>
-        <div ng-repeat="reading in readings">
-            {{reading}}
-        </div>
+        <!--<p>need n times per hour</p>-->
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>User</th>
+                    <th>Time</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="reading in readings">
+                    <td>{{reading.user}}</td>
+                    <td>{{reading.time}}</td>
+                    <td>{{reading.createdAt}}</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
     <div class="spacing-50"></div>
 </div>

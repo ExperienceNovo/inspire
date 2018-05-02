@@ -58,7 +58,50 @@ angular.module( 'inspire.home', [
 	        }],
         },
         credits:{enabled:false},
+    };
 
+    $scope.thresholdChart = {
+    	chart: {
+            zoomType: 'x',
+        },
+        series: [{
+			id: 'Threshhold',
+            type: 'bar',
+            name: 'Threshhold',
+            data: [1]
+        }],
+        title: {
+            text: ''
+        },
+        xAxis: {
+            title: {
+                text: null
+            }
+        },
+        yAxis: {
+            title: {
+                text: null
+            },
+            min:0,
+            max:100,
+            plotLines: [{
+	            color: '#FF0000',
+	            width: 2,
+	            value: 10
+	        },
+	        {
+	            color: '#FF0000',
+	            width: 2,
+	            value: 50
+	        },
+	        {
+	            color: '#FF0000',
+	            width: 2,
+	            value: 88
+	        }],
+        },
+        legend: {enabled: false},
+        credits:{enabled:false},
     };
 
     $scope.time = 0;
@@ -69,26 +112,26 @@ angular.module( 'inspire.home', [
 		$scope.timeChart.series[0].data.push([$scope.time, $scope.volume*100]);
 		$scope.timeChart.series[1].data.push([$scope.time, $scope.volume*Math.random()*100]);
 
-		//IF LENGETH IS > N // remove end elements
+		if($scope.time >= 100){$scope.timeChart.series[0].data.shift();$scope.timeChart.series[1].data.shift()}
 
-		if ($scope.volume*100 > 10){
-			$scope.thresholdTime++;
-			//TODO: GRAPH THRESHOLD TIME
-		}
+		//TODO: GRAPH THRESHOLD TIME
+		if ($scope.volume*100 > 10){$scope.thresholdTime++; $scope.thresholdChart.series[0].data = [$scope.thresholdTime]}
+
 		else{
 
 			if ($scope.thresholdTime > 10){
 				var newReading = {};
 				newReading.user = $scope.currentUser.id;
-				newReading.length = $scope.thresholdTime;
+				newReading.time = $scope.thresholdTime;
+				newReading.createdAt = new Date();;
 				$scope.readings.push(newReading);
-				console.log($scope.readings)
 				//ReadingModel.create($scope.newReading).then(function(){
 
 				//});
 			}
 
 			$scope.thresholdTime = 0;
+			$scope.thresholdChart.series[0].data = [1];
 		}
 
 	};
