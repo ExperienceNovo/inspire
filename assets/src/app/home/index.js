@@ -14,14 +14,18 @@ angular.module( 'inspire.home', [
 	});
 }])
 
-.controller( 'HomeCtrl', ['$interval', '$scope',  'config', 'titleService', function HomeController( $interval, $scope, config, titleService ) {
+.controller( 'HomeCtrl', ['$interval', '$timeout', '$scope',  'config', 'titleService', 'ReadingModel', function HomeController( $interval, $timeout, $scope, config, titleService, ReadingModel ) {
 	titleService.setTitle('inspire');
 	$scope.currentUser = config.currentUser;
 	$scope.newReading = {};
 	$scope.readings = [];
+	$scope.purchasing = false;
+	$scope.time = 0;
+	$scope.thresholdTime = 0;
 
-	//TODO: FACTOR
-	//if ($scope.currentUser){}
+	$scope.purchase = function(){
+		$scope.purchasing = !$scope.purchasing;
+	};
 
 	$scope.timeChart = {
     	chart: {
@@ -66,7 +70,7 @@ angular.module( 'inspire.home', [
         },
         series: [{
 			id: 'Threshhold',
-            type: 'bar',
+            type: 'column',
             name: 'Threshhold',
             data: [1]
         }],
@@ -103,99 +107,107 @@ angular.module( 'inspire.home', [
         legend: {enabled: false},
         credits:{enabled:false},
     };
+	
+	//TODO: FACTOR
+	if ($scope.currentUser){
 
-    $scope.time = 0;
-    $scope.addTime = function() {
+		ReadingModel.getSome(100, 0, 'createdAt DESC', $scope.currentUser.id).then(function(readings){
+			$scope.readings = readings;
+		});
 
-		$scope.time++;
+	    $scope.addTime = function() {
 
-		$scope.timeChart.series[0].data.push([$scope.time, $scope.volume*100]);
-		$scope.timeChart.series[1].data.push([$scope.time, $scope.volume*Math.random()*100]);
+			$scope.time++;
 
-		if($scope.time >= 100){$scope.timeChart.series[0].data.shift();$scope.timeChart.series[1].data.shift()}
+			$scope.timeChart.series[0].data.push([$scope.time, $scope.volume*100]);
+			$scope.timeChart.series[1].data.push([$scope.time, $scope.volume*Math.random()*100]);
 
-		//TODO: GRAPH THRESHOLD TIME
-		if ($scope.volume*100 > 10){$scope.thresholdTime++; $scope.thresholdChart.series[0].data = [$scope.thresholdTime]}
+			if($scope.time >= 100){$scope.timeChart.series[0].data.shift();$scope.timeChart.series[1].data.shift()}
 
-		else{
+			//TODO: GRAPH THRESHOLD TIME
+			if ($scope.volume*100 > 10){$scope.thresholdTime++; $scope.thresholdChart.series[0].data = [$scope.thresholdTime]}
 
-			if ($scope.thresholdTime > 10){
-				var newReading = {};
-				newReading.user = $scope.currentUser.id;
-				newReading.time = $scope.thresholdTime;
-				newReading.createdAt = new Date();;
-				$scope.readings.push(newReading);
-				//ReadingModel.create($scope.newReading).then(function(){
+			else{
 
-				//});
+				if ($scope.thresholdTime > 10){
+					var newReading = {};
+					newReading.user = $scope.currentUser.id;
+					newReading.time = $scope.thresholdTime;
+					newReading.createdAt = new Date();;
+					//ReadingModel.create($scope.newReading).then(function(){
+						$scope.readings.push(newReading);
+					//});
+				}
+
+				$scope.thresholdTime = 0;
+				$scope.thresholdChart.series[0].data = [1];
 			}
 
-			$scope.thresholdTime = 0;
-			$scope.thresholdChart.series[0].data = [1];
-		}
-
-	};
-
-    $scope.start = function(){
-		$interval($scope.addTime, 100);
-    };
-
-    function createAudioMeter(audioContext,clipLevel,averaging,clipLag) {
-		var processor = audioContext.createScriptProcessor(512);
-		processor.onaudioprocess = volumeAudioProcess;
-		processor.clipping = false;
-		processor.lastClip = 0;
-		processor.volume = 0;
-		processor.clipLevel = clipLevel || 0.98;
-		processor.averaging = averaging || 0.95;
-		processor.clipLag = clipLag || 750;
-		processor.connect(audioContext.destination);
-		processor.checkClipping = function(){
-			if (!this.clipping){return false;}
-			if ((this.lastClip + this.clipLag) < window.performance.now()){
-				this.clipping = false;
-				return this.clipping;
-			}
 		};
-		processor.shutdown = function(){
-			this.disconnect();
-			this.onaudioprocess = null;
+
+		$timeout(function() { $interval($scope.addTime, 100); }, 2000);
+
+	    $scope.start = function(){
+			$interval($scope.addTime, 100);
+	    };
+
+	    function createAudioMeter(audioContext,clipLevel,averaging,clipLag) {
+			var processor = audioContext.createScriptProcessor(512);
+			processor.onaudioprocess = volumeAudioProcess;
+			processor.clipping = false;
+			processor.lastClip = 0;
+			processor.volume = 0;
+			processor.clipLevel = clipLevel || 0.98;
+			processor.averaging = averaging || 0.95;
+			processor.clipLag = clipLag || 750;
+			processor.connect(audioContext.destination);
+			processor.checkClipping = function(){
+				if (!this.clipping){return false;}
+				if ((this.lastClip + this.clipLag) < window.performance.now()){
+					this.clipping = false;
+					return this.clipping;
+				}
+			};
+			processor.shutdown = function(){
+				this.disconnect();
+				this.onaudioprocess = null;
+			};
+			return processor;
 		};
-		return processor;
-	};
 
-	function volumeAudioProcess( event ) {
-		var buf = event.inputBuffer.getChannelData(0);
-	    var bufLength = buf.length;
-		var sum = 0;
-	    var x;
+		function volumeAudioProcess( event ) {
+			var buf = event.inputBuffer.getChannelData(0);
+		    var bufLength = buf.length;
+			var sum = 0;
+		    var x;
 
-	    for (var i=0; i<bufLength; i++) {
-	    	x = buf[i];
-	    	if (Math.abs(x)>=this.clipLevel) {
-	    		this.clipping = true;
-	    		this.lastClip = window.performance.now();
-	    	}
-	    	sum += x * x;
-	    }
+		    for (var i=0; i<bufLength; i++) {
+		    	x = buf[i];
+		    	if (Math.abs(x)>=this.clipLevel) {
+		    		this.clipping = true;
+		    		this.lastClip = window.performance.now();
+		    	}
+		    	sum += x * x;
+		    }
 
-	    var rms =  Math.sqrt(sum / bufLength);
-		this.volume = Math.max(rms, this.volume*this.averaging);
-	    $scope.volume = this.volume;
-	};
+		    var rms =  Math.sqrt(sum / bufLength);
+			this.volume = Math.max(rms, this.volume*this.averaging);
+		    $scope.volume = this.volume;
+		};
 
-    function stream(stream){
-		window.AudioContext = window.AudioContext || window.webkitAudioContext;
-	    var audioContext = new AudioContext();
-		var mediaStreamSource = audioContext.createMediaStreamSource(stream);
-		var meter = createAudioMeter(audioContext);
-   		mediaStreamSource.connect(meter);
-	};
-	function err(err){};
+	    function stream(stream){
+			window.AudioContext = window.AudioContext || window.webkitAudioContext;
+		    var audioContext = new AudioContext();
+			var mediaStreamSource = audioContext.createMediaStreamSource(stream);
+			var meter = createAudioMeter(audioContext);
+	   		mediaStreamSource.connect(meter);
+		};
+		function err(err){};
 
-    //MIC LOGIC
-    navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
-	navigator.getUserMedia({ audio: true, video: false }, stream, err);
+	    //MIC LOGIC
+	    navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
+		navigator.getUserMedia({ audio: true, video: false }, stream, err);
+	}
 
 
 }]);

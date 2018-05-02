@@ -6,10 +6,13 @@
 module.exports = {
 
 	getSome: function(req, res) {
-		Reading.getOne(req.param('id'))
-		.spread(function(model) {
-			Reading.subscribe(req, model);
-			res.json(model);
+		Reading.find({user:req.query.user})
+		.limit(req.query.limit)
+		.skip(req.query.skip)
+		.sort(req.query.sort)
+		.then(function(models) {
+			Reading.subscribe(req, models);
+			res.json(models);
 		});
 	},
 
