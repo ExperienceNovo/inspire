@@ -2,29 +2,6 @@
     width: 100%;
 }
 
-.fax-header {
-    position: relative;
-    height: 50%;
-    width: 100%;
-    padding: 50px 0;
-    background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(/images/inspire.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-.fax-logo {
-    width: 50%;
-    height: 50%;
-    overflow: auto;
-    margin: auto;
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-}
-
 .spacing-15 {
     padding: 15px;
 }
@@ -239,7 +216,7 @@ a:hover,a:focus {
       rgba(0, 0, 0, 0.5), 
       rgba(0, 0, 0, 0.5)
     ),url(/images/inspire.jpg) no-repeat bottom center scroll;
-    background-color: #000;
+    background-color: #466AB8;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -256,8 +233,10 @@ a:hover,a:focus {
 }
 
 .intro .intro-body .intro-text {
-    font-size: 25px;
-    font-weight: bold;
+    margin-top:-8%;
+    font-size: 20px;
+    //font-weight: bold;
+    font-style:italic;
     color: #fff;
 }
 .btn-circle {
@@ -342,7 +321,7 @@ a:hover,a:focus {
     padding: 50px 0;
     color: #fff;
     //background: url(../img/abouts-bg.jpg) no-repeat center center scroll;
-    background-color: #126ddf;
+    background-color: #466AB8;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -366,8 +345,8 @@ a:hover,a:focus {
 }
 
 .btn-default {
-    border: 1px solid #42DCA3;
-    color: #42DCA3;
+    border: 1px solid #466AB8;
+    color: #466AB8;
     background-color: transparent;
 }
 

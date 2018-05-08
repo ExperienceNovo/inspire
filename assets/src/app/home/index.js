@@ -65,9 +65,7 @@ angular.module( 'inspire.home', [
     };
 
     $scope.thresholdChart = {
-    	chart: {
-            zoomType: 'x',
-        },
+    	chart: {},
         series: [{
 			id: 'Threshhold',
             type: 'column',
