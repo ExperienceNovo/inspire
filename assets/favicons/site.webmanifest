@@ -1,5 +1,6 @@
 {
-    "name": "",
+    "name": "inspiro",
+    "short_name": "inspiro",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",
