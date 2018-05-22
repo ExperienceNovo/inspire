@@ -14,5 +14,5 @@ angular.module( 'inspire.register', [
 }])
 
 .controller( 'RegisterCtrl', [ '$scope', 'titleService', function RegisterController( $scope, titleService ) {
-	titleService.setTitle('Register | inspire');
+	titleService.setTitle('Register | inspiro');
 }]);

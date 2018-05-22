@@ -15,7 +15,7 @@ angular.module( 'inspire.home', [
 }])
 
 .controller( 'HomeCtrl', ['$interval', '$timeout', '$scope',  'config', 'titleService', 'ReadingModel', function HomeController( $interval, $timeout, $scope, config, titleService, ReadingModel ) {
-	titleService.setTitle('inspire');
+	titleService.setTitle('inspiro');
 	$scope.currentUser = config.currentUser;
 	$scope.newReading = {};
 	$scope.readings = [];
