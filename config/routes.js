@@ -55,7 +55,7 @@ module.exports.routes = {
   'get /api/user/username/:path': 'UserController.getByUsername',
   'post /api/user': 'UserController.create',
 
-  '/.well-known/acme-challenge/7ZmHFyhY2p7lF_P4fWLzfd4PCnbKgch7gJXAFeAmsgo': 'HomeController.ssl',
+  '/.well-known/acme-challenge/CG9C0gYgdnC0hVRgH-XjHxyn40mHVqXUg907rc9E6_Q': 'HomeController.ssl',
 
   // If a request to a URL doesn't match any of the custom routes above, it is matched
   // against Sails route blueprints.  See `config/blueprints.js` for configuration options
