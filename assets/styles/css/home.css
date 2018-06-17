@@ -211,11 +211,11 @@ a:hover,a:focus {
     padding: 100px 0;
     text-align: center;
     color: #fff;
-    //background:     
-    //linear-gradient(
-    //  rgba(0, 0, 0, 0.5), 
-    //  rgba(0, 0, 0, 0.5)
-    //),url(/images/inspire.jpg) no-repeat bottom center scroll;
+    background:     
+    linear-gradient(
+      rgba(0, 0, 0, 0.5), 
+      rgba(0, 0, 0, 0.5)
+    ),url(/images/inspire.jpg) no-repeat bottom center scroll;
     background-color: #466AB8;
     -webkit-background-size: cover;
     -moz-background-size: cover;
