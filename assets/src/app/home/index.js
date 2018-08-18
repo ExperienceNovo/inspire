@@ -26,7 +26,6 @@ angular.module( 'inspire.home', [
 	$scope.thresholdTime = 0;
 
 	$scope.createOrder = function(){
-		$scope.purchasing = !$scope.purchasing;
 		OrderModel.create($scope.newOrder).then(function(model){
 			$location.path('/order/'+model.id);
 		});
