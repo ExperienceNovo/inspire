@@ -15,7 +15,7 @@ angular.module( 'inspire.home', [
 }])
 
 .controller( 'HomeCtrl', ['$interval', '$timeout', '$scope',  'config', 'titleService', 'ReadingModel', function HomeController( $interval, $timeout, $scope, config, titleService, ReadingModel ) {
-	titleService.setTitle('Inspiro | Smart Incentive Spirometry');
+	titleService.setTitle('Inspiro | Breathe Easy');
 	$scope.currentUser = config.currentUser;
 	$scope.newReading = {};
 	$scope.readings = [];
