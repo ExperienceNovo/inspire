@@ -17,6 +17,7 @@ angular.module( 'inspire.home', [
 .controller( 'HomeCtrl', ['$interval', '$timeout', '$scope',  'config', 'titleService', 'ReadingModel', function HomeController( $interval, $timeout, $scope, config, titleService, ReadingModel ) {
 	titleService.setTitle('Inspiro | Breathe Easy');
 	$scope.currentUser = config.currentUser;
+	$scope.isRunning = false;
 	$scope.newReading = {};
 	$scope.readings = [];
 	$scope.purchasing = false;
@@ -146,8 +147,12 @@ angular.module( 'inspire.home', [
 		//$timeout(function() { $interval($scope.addTime, 100); }, 2000);
 
 	    $scope.start = function(){
-			$interval($scope.addTime, 100);
+	    	if (!$scope.isRunning){$interval($scope.addTime, 100);$scope.isRunning=!$scope.isRunning}
 	    };
+
+	   	$scope.stop = function(){
+	   		$scope.isRunning=!$scope.isRunning;
+	   	};
 
 	    function createAudioMeter(audioContext,clipLevel,averaging,clipLag) {
 			var processor = audioContext.createScriptProcessor(512);
