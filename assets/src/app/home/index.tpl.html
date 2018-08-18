@@ -24,7 +24,8 @@ p{color:#5a5a5a;}
     <div class="spacing-25"></div>
     <div class="container">
         <h3>INSPIRO</h3>
-        <p>Connect your device</p>
+        <p>Connect your device</p><hr>
+        <div class="spacing-25"></div>
         <div class="col-sm-10 col-xs-8">
             <highchart config="timeChart"></highchart>
         </div>
@@ -33,7 +34,7 @@ p{color:#5a5a5a;}
         </div>
         <button style="border-radius:30px;background-color:#466ab8" ng-show="!isRunning" class="btn btn-default log-btn" ng-click="start()">START</button>
         <button style="border-radius:30px;background-color:#466ab8" ng-show="isRunning" class="btn btn-default log-btn" ng-click="stop()">STOP</button>
-        <div class="spacing-15"></div>
+        <div class="spacing-25"></div>
         <h4>Readings</h4>
         <!--<p>need n times per hour</p>-->
         <p ng-show="readings.length==0">No Readings</p>
@@ -55,6 +56,7 @@ p{color:#5a5a5a;}
                 </tr>
             </tbody>
         </table>
+        <div class="spacing-25"></div>
     </div>
 </div>
 
