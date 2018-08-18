@@ -14,16 +14,23 @@ angular.module( 'inspire.home', [
 	});
 }])
 
-.controller( 'HomeCtrl', ['$interval', '$timeout', '$scope',  'config', 'titleService', 'ReadingModel', function HomeController( $interval, $timeout, $scope, config, titleService, ReadingModel ) {
+.controller( 'HomeCtrl', ['$interval', '$location', '$timeout', '$scope',  'config', 'OrderModel', 'titleService', 'ReadingModel', function HomeController( $interval, $location, $timeout, $scope, config, OrderModel, titleService, ReadingModel ) {
 	titleService.setTitle('Inspiro | Breathe Easy');
 	$scope.currentUser = config.currentUser;
 	$scope.isRunning = false;
+	$scope.newOrder = {};
 	$scope.newReading = {};
 	$scope.readings = [];
 	$scope.purchasing = false;
 	$scope.time = 0;
 	$scope.thresholdTime = 0;
 
+	$scope.createOrder = function(){
+		$scope.purchasing = !$scope.purchasing;
+		OrderModel.create($scope.newOrder).then(function(model){
+			$location.path('/order/'+model.id);
+		});
+	};
 	$scope.purchase = function(){
 		$scope.purchasing = !$scope.purchasing;
 	};

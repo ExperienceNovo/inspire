@@ -1,6 +1,5 @@
 /**
  * ReadingController
- *
  */
  
 module.exports = {

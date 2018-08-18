@@ -10,9 +10,9 @@ angular.module( 'inspire', [
     'services',
     'models',
     'highcharts-ng',
-    'inspire.dashboard',
     'inspire.footer',
     'inspire.home',
+    'inspire.order',
     'inspire.login',
     'inspire.register',
 ])

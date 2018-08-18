@@ -1,29 +1,8 @@
+/**
+ * UserController
+ */
+
 module.exports = {
-	getAll: function(req, res) {
-		User.getAll()
-		.spread(function(models) {
-			res.json(models);
-		});
-	},
-
-	getOne: function(req, res) {
-		User.getOne(req.param('id'))
-		.spread(function(model) {
-			res.json(model);
-		});
-	},
-
-	getByUsername: function(req, res) {
-		User.find()
-		.where({username: req.param('path')})
-		.spread(function(model) {
-			User.subscribe(req, model);
-			res.json(model);
-		})
-		.fail(function(err) {
-			res.send(404);
-		});
-	},
 
 	create: function (req, res) {
 		var model = {

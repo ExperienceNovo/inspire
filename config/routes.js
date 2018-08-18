@@ -33,6 +33,7 @@ module.exports.routes = {
   ***************************************************************************/
 
   'get /': 'HomeController.index',
+  'get /order/:id': 'HomeController.index',
 
   'get /login': 'HomeController.index',
   'get /logout': 'AuthController.logout',
@@ -40,6 +41,11 @@ module.exports.routes = {
 
   'post /auth/local': 'AuthController.callback',
   'post /auth/local/:action': 'AuthController.callback',
+
+  /**
+   * Order routes
+   */
+  'post /api/order': 'OrderController.create',
 
   /**
    * Reading routes
@@ -50,9 +56,6 @@ module.exports.routes = {
   /**
    * User routes
    */
-  'get /api/user': 'UserController.getAll',
-  'get /api/user/:id': 'UserController.getOne',
-  'get /api/user/username/:path': 'UserController.getByUsername',
   'post /api/user': 'UserController.create',
 
   '/.well-known/acme-challenge/CG9C0gYgdnC0hVRgH-XjHxyn40mHVqXUg907rc9E6_Q': 'HomeController.ssl',
