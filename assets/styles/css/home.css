@@ -212,10 +212,10 @@ a:hover,a:focus {
     text-align: center;
     color: #fff;
     background:     
-    linear-gradient(
-      rgba(0, 0, 0, 0.5), 
-      rgba(0, 0, 0, 0.5)
-    ),url(/images/inspire.jpg) no-repeat bottom center scroll;
+    //linear-gradient(
+    //  rgba(0, 0, 0, 0.5), 
+    //  rgba(0, 0, 0, 0.5)
+    //),url(/images/inspire.jpg) no-repeat bottom center scroll;
     background-color: #466AB8;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -345,16 +345,16 @@ a:hover,a:focus {
 }
 
 .btn-default {
-    border: 1px solid #466AB8;
-    color: #466AB8;
+    border: 1px solid #5c74a9;
+    color: #5c74a9;
     background-color: transparent;
 }
 
-.btn-default:hover,.btn-default:focus {
-    border: 1px solid #42DCA3;
+.btn-default:hover,.btn-default:focus,.btn-default:active {
+    border: 1px solid #5c74a9;
     outline: none;
     color: #000;
-    background-color: #42DCA3;
+    background-color: #5c74a9;
 }
 
 ul.banner-social-buttons {

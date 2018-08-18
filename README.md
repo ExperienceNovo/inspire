@@ -19,15 +19,15 @@ var query = {
 
 ### Models | Endpoints
 #### Entry
-> This is the Bill Model
+> This is the Entry Model
 ```javascript
-var billModel = {
+var entryModel = {
 
 };
 ```
 #### Member
-> This is the Bill Model
+> This is the Member Model
 ```javascript
-var billModel = {
+var memberModel = {
 
 };

@@ -14,5 +14,5 @@ angular.module( 'inspire.login', [
 }])
 
 .controller( 'LoginCtrl', [ '$scope', 'titleService', function LoginController( $scope, titleService ) {
-	titleService.setTitle('Login | inspiro');
+	titleService.setTitle('Login | Inspiro');
 }]);
