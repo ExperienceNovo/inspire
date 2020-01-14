@@ -11,7 +11,7 @@ angular.module( 'inspire.home', [])
 	});
 }])
 .controller( 'HomeCtrl', ['$interval', '$location', '$timeout', '$scope',  'config', 'OrderModel', 'titleService', 'ReadingModel', function HomeController( $interval, $location, $timeout, $scope, config, OrderModel, titleService, ReadingModel ) {
-	titleService.setTitle('Inspiro | Breathe');
+	titleService.setTitle('Inspire Breathing');
 	$scope.currentUser = config.currentUser;
 	$scope.isRunning = false;
 	$scope.newOrder = {};
