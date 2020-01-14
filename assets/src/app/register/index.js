@@ -1,6 +1,4 @@
-angular.module( 'inspire.register', [
-])
-
+angular.module( 'inspire.register', [])
 .config(['$stateProvider', function config( $stateProvider ) {
 	$stateProvider.state( 'register', {
 		url: '/register',
@@ -12,7 +10,6 @@ angular.module( 'inspire.register', [
 		}
 	});
 }])
-
 .controller( 'RegisterCtrl', [ '$scope', 'titleService', function RegisterController( $scope, titleService ) {
 	titleService.setTitle('Register | Inspiro');
 }]);

@@ -1,6 +1,4 @@
-angular.module( 'inspire.home', [
-])
-
+angular.module( 'inspire.home', [])
 .config(['$stateProvider', function config( $stateProvider ) {
 	$stateProvider.state( 'home', {
 		url: '/',
@@ -10,12 +8,10 @@ angular.module( 'inspire.home', [
 				templateUrl: 'home/index.tpl.html'
 			}
 		}
-		//resolve here
 	});
 }])
-
 .controller( 'HomeCtrl', ['$interval', '$location', '$timeout', '$scope',  'config', 'OrderModel', 'titleService', 'ReadingModel', function HomeController( $interval, $location, $timeout, $scope, config, OrderModel, titleService, ReadingModel ) {
-	titleService.setTitle('Inspiro | Breathe Easy');
+	titleService.setTitle('Inspiro | Breathe');
 	$scope.currentUser = config.currentUser;
 	$scope.isRunning = false;
 	$scope.newOrder = {};
@@ -35,9 +31,7 @@ angular.module( 'inspire.home', [
 	};
 
 	$scope.timeChart = {
-    	chart: {
-            zoomType: 'x',
-        },
+    	chart: {zoomType: 'x',},
         series: [{
 			id: 'Decible',
             type: 'spline',
@@ -50,18 +44,10 @@ angular.module( 'inspire.home', [
             data: []
         }],
         
-        title: {
-            text: ''
-        },
-        xAxis: {
-            title: {
-                text: null
-            },
-        },
+        title: {text: ''},
+        xAxis: {title: {text: null},},
         yAxis: {
-            title: {
-                text: null
-            },
+            title: {text: null},
             plotLines: [{
 	            color: '#FF0000',
 	            width: 2,
@@ -70,7 +56,6 @@ angular.module( 'inspire.home', [
         },
         credits:{enabled:false},
     };
-
     $scope.thresholdChart = {
     	chart: {},
         series: [{
@@ -79,18 +64,10 @@ angular.module( 'inspire.home', [
             name: 'Threshhold',
             data: [1]
         }],
-        title: {
-            text: ''
-        },
-        xAxis: {
-            title: {
-                text: null
-            }
-        },
+        title: {text: ''},
+        xAxis: {title: {text: null}},
         yAxis: {
-            title: {
-                text: null
-            },
+            title: {text: null},
             min:0,
             max:100,
             plotLines: [{
@@ -116,24 +93,20 @@ angular.module( 'inspire.home', [
 	//TODO: FACTOR
 	if ($scope.currentUser){
 
+		//TEMPLATES / GAMES === 
+		$scope.games = [];
+
 		ReadingModel.getSome(100, 0, 'createdAt DESC', $scope.currentUser.id).then(function(readings){
 			$scope.readings = readings;
 		});
-
 	    $scope.addTime = function() {
-
 			$scope.time++;
-
 			$scope.timeChart.series[0].data.push([$scope.time, $scope.volume*100]);
 			$scope.timeChart.series[1].data.push([$scope.time, $scope.volume*Math.random()*100]);
-
 			if($scope.time >= 100){$scope.timeChart.series[0].data.shift();$scope.timeChart.series[1].data.shift()}
-
 			//TODO: GRAPH THRESHOLD TIME
 			if ($scope.volume*100 > 10){$scope.thresholdTime++; $scope.thresholdChart.series[0].data = [$scope.thresholdTime]}
-
 			else{
-
 				if ($scope.thresholdTime > 10){
 					var newReading = {};
 					newReading.user = $scope.currentUser.id;
@@ -143,23 +116,17 @@ angular.module( 'inspire.home', [
 						$scope.readings.push(newReading);
 					//});
 				}
-
 				$scope.thresholdTime = 0;
 				$scope.thresholdChart.series[0].data = [1];
 			}
-
 		};
-
 		//$timeout(function() { $interval($scope.addTime, 100); }, 2000);
-
 	    $scope.start = function(){
 	    	if (!$scope.isRunning){$interval($scope.addTime, 100);$scope.isRunning=!$scope.isRunning}
 	    };
-
 	   	$scope.stop = function(){
 	   		$scope.isRunning=!$scope.isRunning;
 	   	};
-
 	    function createAudioMeter(audioContext,clipLevel,averaging,clipLag) {
 			var processor = audioContext.createScriptProcessor(512);
 			processor.onaudioprocess = volumeAudioProcess;
@@ -183,13 +150,11 @@ angular.module( 'inspire.home', [
 			};
 			return processor;
 		};
-
 		function volumeAudioProcess( event ) {
 			var buf = event.inputBuffer.getChannelData(0);
 		    var bufLength = buf.length;
 			var sum = 0;
 		    var x;
-
 		    for (var i=0; i<bufLength; i++) {
 		    	x = buf[i];
 		    	if (Math.abs(x)>=this.clipLevel) {
@@ -198,12 +163,10 @@ angular.module( 'inspire.home', [
 		    	}
 		    	sum += x * x;
 		    }
-
 		    var rms =  Math.sqrt(sum / bufLength);
 			this.volume = Math.max(rms, this.volume*this.averaging);
 		    $scope.volume = this.volume;
 		};
-
 	    function stream(stream){
 			window.AudioContext = window.AudioContext || window.webkitAudioContext;
 		    var audioContext = new AudioContext();
@@ -212,11 +175,7 @@ angular.module( 'inspire.home', [
 	   		mediaStreamSource.connect(meter);
 		};
 		function err(err){};
-
-	    //MIC LOGIC
 	    navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
 		navigator.getUserMedia({ audio: true, video: false }, stream, err);
 	}
-
-
 }]);

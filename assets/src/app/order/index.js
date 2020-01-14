@@ -1,6 +1,4 @@
-angular.module( 'inspire.order', [
-])
-
+angular.module( 'inspire.order', [])
 .config(['$stateProvider', function config( $stateProvider ) {
 	$stateProvider.state( 'order', {
 		url: '/order/:id',
@@ -12,7 +10,6 @@ angular.module( 'inspire.order', [
 		}
 	});
 }])
-
 .controller( 'OrderCtrl', [ '$scope', 'titleService', function OrderController( $scope, titleService ) {
 	titleService.setTitle('Order | Inspiro');
 }]);

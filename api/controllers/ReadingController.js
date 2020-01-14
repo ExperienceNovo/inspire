@@ -1,30 +1,16 @@
-/**
- * ReadingController
- */
- 
 module.exports = {
-
-	getSome: function(req, res) {
-		Reading.find({user:req.query.user})
-		.limit(req.query.limit)
-		.skip(req.query.skip)
-		.sort(req.query.sort)
-		.then(function(models) {
-			Reading.subscribe(req, models);
-			res.json(models);
-		});
+	get: async function(req, res) {
+		var models = await Reading.find({user:req.query.user}).limit(req.query.limit).skip(req.query.skip).sort(req.query.sort)
+		Reading.subscribe(req, models);
+		res.json(models);
 	},
-
-	create: function (req, res) {
+	create: async function (req, res) {
 		var model = {
 			reading: req.param('reading'),
 			user: req.param('user'),
 		};
-		Reading.create(model)
-		.exec(function(err, reading) {
-			if (err) {return console.log(err);}
-			else {Reading.publishCreate(reading);}
-		});
+		var reading = await Reading.create(model)
+		Reading.publishCreate(reading);
+		res.json(reading);
 	},
-
 };

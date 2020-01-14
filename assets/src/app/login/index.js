@@ -1,6 +1,4 @@
-angular.module( 'inspire.login', [
-])
-
+angular.module('inspire.login', [])
 .config(['$stateProvider', function config( $stateProvider ) {
 	$stateProvider.state( 'login', {
 		url: '/login',
@@ -12,7 +10,6 @@ angular.module( 'inspire.login', [
 		}
 	});
 }])
-
 .controller( 'LoginCtrl', [ '$scope', 'titleService', function LoginController( $scope, titleService ) {
 	titleService.setTitle('Login | Inspiro');
 }]);

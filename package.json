@@ -1,9 +1,18 @@
 {
-  "name": "1.0.0",
+  "name": "INSPIRO",
   "private": true,
   "version": "0.0.0",
-  "description": "Fax2DC LLC",
-  "keywords": [],
+  "description": "INSPIRO SMART INCENTIVE SPIROMETER",
+  "keywords": [
+    "BREATH",
+    "BREATHE",
+    "MEDTECH",
+    "SPIROMETRY",
+    "HEALTH",
+    "HARDWARE",
+    "IOT",
+    "DECENTRALIZED"
+  ],
   "dependencies": {
     "bcryptjs": "~2.1.0",
     "ejs": "~2.5.5",
@@ -17,7 +26,7 @@
     "grunt-contrib-less": "0.11.1",
     "grunt-contrib-uglify": "~0.4.0",
     "grunt-contrib-watch": "~0.5.3",
-    "grunt-html2js": "~0.3.0",
+    "grunt-html2js": "^0.5.1",
     "grunt-sails-linker": "~0.9.5",
     "grunt-sync": "~0.0.4",
     "include-all": "~0.1.3",
@@ -31,11 +40,11 @@
     "passport-local": "^1.0.0",
     "passport-twitter": "^1.0.2",
     "rc": "~0.5.0",
-    "request": "^2.69.0",
-    "sails": "~0.11.0",
+    "request": "^2.88.0",
+    "sails": "^1.2.3",
     "sails-disk": "~0.10.0",
-    "sails-generate-auth": "~0.2.0",
     "sails-hook-email": "^0.12.1",
+    "sails-hook-grunt": "^4.0.1",
     "sails-mongo": "^0.11.0",
     "validator": "~3.28.0"
   },
@@ -46,13 +55,13 @@
   "main": "app.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ExperienceNOVO/Fax2DC.git"
+    "url": "git+https://github.com/ExperienceNOVO/inspiro.git"
   },
-  "author": "Fax2DC",
+  "author": "Trevor Overman | NOVO | CRE8",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ExperienceNOVO/Fax2DC/issues"
+    "url": "https://github.com/ExperienceNOVO/inspiro/issues"
   },
-  "homepage": "https://github.com/ExperienceNOVO/Fax2DC#readme",
+  "homepage": "https://www.inspiro.care",
   "devDependencies": {}
 }
