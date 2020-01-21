@@ -1,0 +1,5 @@
+2020/01/21-14:38:01.771 d2c Recovering log #21
+2020/01/21-14:38:01.771 d2c Level-0 table #24: started
+2020/01/21-14:38:01.781 d2c Level-0 table #24: 337 bytes OK
+2020/01/21-14:38:01.787 d2c Delete type=0 #21
+2020/01/21-14:38:01.788 d2c Delete type=3 #19

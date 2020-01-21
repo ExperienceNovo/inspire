@@ -99,6 +99,7 @@ passport.callback = function (req, res, next) {
     }
 };
 
+//INIT
 passport.loadStrategies = function () {
     var self       = this
     var strategies = sails.config.passport;

@@ -7,8 +7,7 @@ module.exports = {
 	blueprints :{},
 
 	bootstrap: function(cb) {
-		//initApp.init();
-		sails.services.passport.loadStrategies()
+		initApp.init();
 		cb();
 	},
 
