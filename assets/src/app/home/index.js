@@ -2,15 +2,10 @@ angular.module( 'inspire.home', [])
 .config(['$stateProvider', function config( $stateProvider ) {
 	$stateProvider.state( 'home', {
 		url: '/',
-		views: {
-			"main": {
-				controller: 'HomeCtrl',
-				templateUrl: 'home/index.tpl.html'
-			}
-		}
+		views: {"main": {controller: 'HomeCtrl', templateUrl: 'home/index.tpl.html'}}
 	});
 }])
-.controller( 'HomeCtrl', ['$interval', '$location', '$timeout', '$scope',  'config', 'OrderModel', 'titleService', 'ReadingModel', function HomeController( $interval, $location, $timeout, $scope, config, OrderModel, titleService, ReadingModel ) {
+.controller( 'HomeCtrl', ['$interval', '$location', '$timeout', '$scope', 'config', 'EntryModel', 'OrderModel', 'titleService', function HomeController( $interval, $location, $timeout, $scope, config, EntryModel, OrderModel, titleService ) {
 	titleService.setTitle('Inspire Breathing');
 	$scope.currentUser = config.currentUser;
 	$scope.isRunning = false;
@@ -22,13 +17,9 @@ angular.module( 'inspire.home', [])
 	$scope.thresholdTime = 0;
 
 	$scope.createOrder = function(){
-		OrderModel.create($scope.newOrder).then(function(model){
-			$location.path('/order/'+model.id);
-		});
+		OrderModel.create($scope.newOrder).then(function(model){$location.path('/order/'+model.id);});
 	};
-	$scope.purchase = function(){
-		$scope.purchasing = !$scope.purchasing;
-	};
+	$scope.purchase = function(){$scope.purchasing = !$scope.purchasing};
 
 	$scope.timeChart = {
     	chart: {zoomType: 'x',},
@@ -43,18 +34,13 @@ angular.module( 'inspire.home', [])
             name: 'Air Volume',
             data: []
         }],
-        
         title: {text: ''},
         xAxis: {title: {text: null},},
         yAxis: {
             title: {text: null},
-            plotLines: [{
-	            color: '#FF0000',
-	            width: 2,
-	            value: 10
-	        }],
+            plotLines: [{color: '#FF0000', width: 2, value: 10}],
         },
-        credits:{enabled:false},
+        credits: {enabled:false},
     };
     $scope.thresholdChart = {
     	chart: {},
@@ -70,24 +56,14 @@ angular.module( 'inspire.home', [])
             title: {text: null},
             min:0,
             max:100,
-            plotLines: [{
-	            color: '#FF0000',
-	            width: 2,
-	            value: 10
-	        },
-	        {
-	            color: '#FF0000',
-	            width: 2,
-	            value: 50
-	        },
-	        {
-	            color: '#FF0000',
-	            width: 2,
-	            value: 88
-	        }],
+            plotLines: [
+            	{color: '#FF0000', width: 2, value: 10},
+	        	{color: '#FF0000', width: 2, value: 50},
+	        	{color: '#FF0000', width: 2, value: 88}
+	        ],
         },
         legend: {enabled: false},
-        credits:{enabled:false},
+        credits: {enabled:false},
     };
 	
 	//TODO: FACTOR
@@ -96,7 +72,7 @@ angular.module( 'inspire.home', [])
 		//TEMPLATES / GAMES === 
 		$scope.games = [];
 
-		ReadingModel.getSome(100, 0, 'createdAt DESC', $scope.currentUser.id).then(function(readings){
+		EntryModel.get({limit:100, skip:0, sort:'createdAt DESC', user:$scope.currentUser.id}).then(function(readings){
 			$scope.readings = readings;
 		});
 	    $scope.addTime = function() {
@@ -121,12 +97,13 @@ angular.module( 'inspire.home', [])
 			}
 		};
 		//$timeout(function() { $interval($scope.addTime, 100); }, 2000);
+	    
+
+
 	    $scope.start = function(){
 	    	if (!$scope.isRunning){$interval($scope.addTime, 100);$scope.isRunning=!$scope.isRunning}
 	    };
-	   	$scope.stop = function(){
-	   		$scope.isRunning=!$scope.isRunning;
-	   	};
+	   	$scope.stop = function(){$scope.isRunning=!$scope.isRunning;};
 	    function createAudioMeter(audioContext,clipLevel,averaging,clipLag) {
 			var processor = audioContext.createScriptProcessor(512);
 			processor.onaudioprocess = volumeAudioProcess;
@@ -178,4 +155,5 @@ angular.module( 'inspire.home', [])
 	    navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
 		navigator.getUserMedia({ audio: true, video: false }, stream, err);
 	}
+	
 }]);

@@ -1,4 +1,4 @@
 angular.module('models', [
-	'models.order',
-	'models.reading',
+	'models.entry',
+	'models.order'
 ]);

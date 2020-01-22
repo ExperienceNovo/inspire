@@ -13,10 +13,10 @@ module.exports = {
 
 	//TODO: REMOVE
 	datastores: {
-	  'default': {
-	    adapter: 'sails-mongo',
-		url: 'mongodb://heroku_b9102lgk:qpo31buktmg6s38j8rdjml0vtc@ds263759.mlab.com:63759/heroku_b9102lgk'
-	  }
+		'default': {
+			adapter: 'sails-mongo',
+			url: 'mongodb://heroku_b9102lgk:qpo31buktmg6s38j8rdjml0vtc@ds263759.mlab.com:63759/heroku_b9102lgk'
+		}
 	},
 
 	globals: {
@@ -46,29 +46,29 @@ module.exports = {
 	},
 
 	i18n: {},
-	log: {},
+	log: {level: 'verbose'},
 
 	//REDUCE GLOBAL MODEL DEFINITIONS 
 	//APPCECIFIC INHERITANCE 
 	//META MODEL APP . . .
 	models: {
-	  fetchRecordsOnUpdate: true,
-	  fetchRecordsOnCreate: true,
-	  fetchRecordsOnCreateEach: true,
-	  migrate: 'safe',
-	  datastore: 'default',
-	  attributes: {
-	    createdAt: { type: 'ref', columnType: 'datetime', autoCreatedAt: true, },
-	    updatedAt: { type: 'ref', columnType: 'datetime', autoUpdatedAt: true, },
-	    id: { type: 'string', columnName: '_id' }
-	  },
-	  dataEncryptionKeys: {default: 'V7TZVUpF5WLGg2c2eRVaSx0p3/4Ef11ZujTaY4EVdpY='},
+		fetchRecordsOnUpdate: true,
+		fetchRecordsOnCreate: true,
+		fetchRecordsOnCreateEach: true,
+		migrate: 'safe',
+		datastore: 'default',
+		attributes: {
+			createdAt: { type: 'ref', columnType: 'datetime', autoCreatedAt: true },
+			updatedAt: { type: 'ref', columnType: 'datetime', autoUpdatedAt: true },
+			id: { type: 'string', columnName: '_id' }
+		},
+		dataEncryptionKeys: {default: 'V7TZVUpF5WLGg2c2eRVaSx0p3/4Ef11ZujTaY4EVdpY='},
 	},
 
 	passport: {
-	  local: {
-	    strategy: require('passport-local').Strategy
-	  }
+		local: {
+			strategy: require('passport-local').Strategy
+		}
 	},
 
 	policies:{
@@ -89,11 +89,11 @@ module.exports = {
 	  'get /api/game': 'GameController.get',
 	  'post /api/game': 'GameController.create',
 
+	  'get /api/entry': 'EntryController.get',
+	  'post /api/entry': 'EntryController.create',
+
 	  'get /api/order': 'OrderController.get',
 	  'post /api/order': 'OrderController.create',
-
-	  'get /api/reading': 'ReadingController.get',
-	  'post /api/reading': 'ReadingController.create',
 
   	  'get /api/user': 'UserController.get',
 	  'post /api/user': 'UserController.create',

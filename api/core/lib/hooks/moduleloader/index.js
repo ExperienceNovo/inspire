@@ -1,8 +1,5 @@
 module.exports = function(sails) {
 
-  /**
-   * Module dependencies
-   */
   var path = require('path');
   var fs = require('fs');
   var async = require('async');
@@ -11,19 +8,15 @@ module.exports = function(sails) {
   var mergeDictionaries = require('merge-dictionaries');
   var COMMON_JS_FILE_EXTENSIONS = require('common-js-file-extensions');
 
-
-  /**
-   * Module constants
-   */
-
   var BASIC_SUPPORTED_FILE_EXTENSIONS = COMMON_JS_FILE_EXTENSIONS.code;
   var SUPPORTED_FILE_EXTENSIONS_FOR_CONFIG = COMMON_JS_FILE_EXTENSIONS.config.concat(BASIC_SUPPORTED_FILE_EXTENSIONS);
+  
   /**
    * Module loader
-   *
    * Load code files from a Sails app into memory; modules like controllers,
    * models, services, config, etc.
    */
+
   return {
     defaults: function (config) {
       var localConfig = {
@@ -210,6 +203,7 @@ module.exports = function(sails) {
      * @param {Function} cb
      */
     loadModels: function (cb) {
+      console.log('LOADING MODELS')
       // Get the main model files
       includeAll.optional({
         dirname   : sails.config.paths.models,
@@ -514,8 +508,6 @@ module.exports = function(sails) {
     exists: includeAll.exists
 
   };
-
-
 
   /**
    * Private helper function used above.

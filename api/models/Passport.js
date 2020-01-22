@@ -9,9 +9,9 @@ function hashPassword (passport, next) {
     } 
     else {next(null, passport);}
 };
+console.log('HELLLOOOOOOOO')
 module.exports = {
     attributes: {
-        //DEPRECIATE
         id: {type: 'string'},
         model: {type: 'string', defaultsTo: 'PASSPORT'},
         protocol: { type: 'string', required: true },
