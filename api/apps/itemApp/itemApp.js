@@ -1,5 +1,5 @@
 //CRE8.INSPIRO.ITEM.ALPHA
-module.exports = {
+var App = {
 
 	//IMPORT ACTIONS
 	
@@ -9,3 +9,5 @@ module.exports = {
 	//INSPIRE 'ITEM'
 
 };
+
+module.exports = App;

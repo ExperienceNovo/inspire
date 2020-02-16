@@ -1,5 +1,5 @@
 //CRE8.INSPIRO.INIT.ALPHA
-module.exports = {
+var App = {
 	//BOOTSTRAP.. BUILDER .. ETC 
 	//DYNAMIC PEER BUILDER
 	//TODO: LOOP .. import all apps selected to compile 
@@ -18,7 +18,7 @@ module.exports = {
 		passportApp.loadStrategies();
 		entryApp.init();
 
-	},
-
-
+	}
 };
+
+module.exports = App;

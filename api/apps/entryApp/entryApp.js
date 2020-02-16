@@ -5,7 +5,7 @@ var App = {
 
 	//APP-APP CONNECTIONS ... 
 	import:{
-		db:require('./dbApp'),
+		db:require('./../dbApp/dbApp.js'),
 		crypto: require('crypto'),
 	},
 
@@ -29,8 +29,6 @@ var App = {
 
 		}
 	},
-
-
 
 	//WERE GONNA TRY THIS CHARGED UP 
 	//TODO: BOOTSTRAP BUILDER 
