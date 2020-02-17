@@ -40,6 +40,9 @@ var App = {
 			type:'READING', //WHATS THE SCOPE.. / NAME SPACE ? ... ID --> HASHEM
 			attributes: {
 		        user: {model: 'user'},
+		        //what is in a breath ? 
+		        //length, function(t[amplitude]->data)
+		        //this is time
 		        reading: {type: 'integer', required: true},    
 		    }
 		}
@@ -65,6 +68,7 @@ var App = {
     },
 
 	create:async function(model){
+		//
 		await App.db.put(model);
 		return {status:'DONE'};
 	},

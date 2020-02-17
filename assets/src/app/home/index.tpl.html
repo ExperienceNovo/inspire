@@ -11,7 +11,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-10 col-xs-8">
-                        <h2>Inspiro</h2>
+                        <h2>Insire Breathing</h2>
                         <p style="color:white">Breathe | Be Healthy</p>
                     </div>
                     <div class="col-sm-2 col-xs-4"><img style="width:100%" src="images/windgiffade.gif"></div>
@@ -21,40 +21,52 @@
     </section>
     <div class="spacing-25"></div>
     <div class="container">
+
+        <h3>Apps</h3>
+        <p>Selected Apps</p><hr>
+
+        <!-- <h3>Account</h3>
+        <p>CRE8 Account</p> -->
+
         <h3>INSPIRO</h3>
         <p>Connect your device</p><hr>
         <div class="spacing-25"></div>
-        <div class="col-sm-10 col-xs-8">
-            <highchart config="timeChart"></highchart>
+
+        <div id="renderApp">
+
+            <!--controllerfxn-->
+            <!--MAKE DYNAMIC
+            <div class="col-sm-10 col-xs-8"><highchart config="timeChart"></highchart></div>
+            <div class="col-sm-2 col-xs-4"><highchart config="thresholdChart"></highchart></div>
+            <button style="border-radius:30px;background-color:#466ab8" ng-show="!isRunning" class="btn btn-default log-btn" ng-click="start()">START</button>
+            <button style="border-radius:30px;background-color:#466ab8" ng-show="isRunning" class="btn btn-default log-btn" ng-click="stop()">STOP</button>
+            <div class="spacing-25"></div>
+            <h4>Readings</h4>
+            <!--<p>need n times per hour</p>-->
+            <p ng-show="readings.length==0">No Readings</p>
+            <table ng-show="readings.length>0" class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <!--<th>User</th>-->
+                        <th>Time</th>
+                        <th>Data</th>   
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="reading in readings">
+                        <!--<td>{{reading.user}}</td>-->
+                        <td>{{reading.time}}</td>
+                        <td>{{reading.data}}</td>
+                        <td>{{reading.createdAt}}</td>
+                    </tr>
+                </tbody>
+            </table>
+
         </div>
-        <div class="col-sm-2 col-xs-4">
-            <highchart config="thresholdChart"></highchart>
-        </div>
-        <button style="border-radius:30px;background-color:#466ab8" ng-show="!isRunning" class="btn btn-default log-btn" ng-click="start()">START</button>
-        <button style="border-radius:30px;background-color:#466ab8" ng-show="isRunning" class="btn btn-default log-btn" ng-click="stop()">STOP</button>
+
         <div class="spacing-25"></div>
-        <h4>Readings</h4>
-        <!--<p>need n times per hour</p>-->
-        <p ng-show="readings.length==0">No Readings</p>
-        <table ng-show="readings.length>0" class="table table-striped table-hover">
-            <thead>
-                <tr>
-                    <!--<th>User</th>-->
-                    <th>Time</th>
-                    <th>Data</th>   
-                    <th>Date</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr ng-repeat="reading in readings">
-                    <!--<td>{{reading.user}}</td>-->
-                    <td>{{reading.time}}</td>
-                    <td>{{reading.data}}</td>
-                    <td>{{reading.createdAt}}</td>
-                </tr>
-            </tbody>
-        </table>
-        <div class="spacing-25"></div>
+
     </div>
 </div>
 
@@ -158,7 +170,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-10 col-xs-8">
-                        <h2>Inspiro</h2>
+                        <h2>Inspire</h2>
                         <p style="color:white">Breathe In Life, Breathe Out Life</p>
                     </div>
                     <div class="col-sm-2 col-xs-4"><img style="width:100%" src="images/windgiffade.gif"></div>
@@ -169,19 +181,15 @@
     <section id="contact">
         <div class="spacing-25"></div>
         <div class="container">
-            <!--<div class="row">
-                <div class="col-lg-12">
-                    <h3>Smart IoT Healthcare</h3>
-                    <p><a href="">iPhone</a>, <a href="">Android</a></p>
-                </div>
-            </div>-->
             <div class="row">
                 <div class="col-md-6 col-xs-12">
-                    <h3 style="color:black">Inspiro Technology</h3>
+                    <!--<h3 style="color:black">Inspiro Technology</h3>-->
+                    <h3 style="color:black">Valuable Breath</h3>
                     <br>
                     <img class="col-xs-12" style="width:50%" src="images/geometricDevice.jpg">
                     <br>
-                    <p>Inspiro creates opportunity to value your breath. Smart Spirometry allows breath to be a source of <a href="https://www.cre8.xyz/about">Universal Tokenization</a>. As a game controller, Inspiro allows for rich experiences.</p>
+                    <!--CRE8 HERE-->
+                    <p>Inspire creates opportunity to value your breath. Smart Spirometry allows breath to be a source of <a href="https://www.cre8.xyz/about">Universal Tokenization</a>. As a game controller, Inspiro allows for rich experiences.</p>
                     <div class="col-xs-12 spacing-25"></div>
                 </div>
                 <div class="col-md-6 col-xs-12">
@@ -196,7 +204,7 @@
             <div class="row">
                 <div style="text-align: center" class="col-lg-12">
                     <h3>Games and Apps</h3>
-                    <p><!--Creatively Focus intent on your life force! Are you awake?--> Breathing connects you to your body! Applications allow for the creation and sharing of techniques and exercises. Tokenize the effort and earn reputation and income for participation.</p>
+                    <p><!--Creatively Focus intent on your life force! Are you awake?--> Breathing connects you to your body! Applications allow for the creation and sharing of techniques and exercises.<br> Tokenize the effort and earn reputation and income for participation.</p>
                     <!--<img style="height:70px" src="https://www.wimhofmethod.com/cache/uploads/medias/e08a1a59-80b6-41e3-a5d5-9ba38c91980b/5aaa36933f52e.png">-->
                     <img style="height:70px" src="https://media.istockphoto.com/vectors/spirometer-medical-equipment-the-device-determines-the-volume-of-the-vector-id877010706?s=170x170">
                     <img style="height:70px" src="https://cdn2.iconfinder.com/data/icons/air-pollution/512/air-pollution-contamination_-11-512.png">
@@ -211,8 +219,7 @@
                 <div style="text-align: center" class="col-lg-12">
                     <!--<h3>Smart IoT Healthcare</h3>-->
                     <h3>You Can Transform</h3>
-                    <p>Focus intent on your life force! Breathing connects you to your body!</p>
-                    <p>Raise your vibration? Breathe and feel the good energy! </p>
+                    <p>Focus intent on your life force! Breathing connects you to your body!<br> Raise your vibration? Breathe and feel the good energy! </p>
                     <!--<p>Operate on atother frequency, continuallly </p>-->
                 </div>
             </div>      

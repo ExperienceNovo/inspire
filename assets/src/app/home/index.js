@@ -16,9 +16,7 @@ angular.module( 'inspire.home', [])
 	$scope.time = 0;
 	$scope.thresholdTime = 0;
 
-	$scope.createOrder = function(){
-		OrderModel.create($scope.newOrder).then(function(model){$location.path('/order/'+model.id);});
-	};
+	$scope.createOrder = function(){OrderModel.create($scope.newOrder).then(function(model){$location.path('/order/'+model.id);});};
 	$scope.purchase = function(){$scope.purchasing = !$scope.purchasing};
 
 	$scope.timeChart = {
@@ -72,16 +70,18 @@ angular.module( 'inspire.home', [])
 		//TEMPLATES / GAMES === 
 		$scope.games = [];
 
-		EntryModel.get({limit:100, skip:0, sort:'createdAt DESC', user:$scope.currentUser.id}).then(function(readings){
-			$scope.readings = readings;
-		});
+		EntryModel.get({limit:100, skip:0, sort:'createdAt DESC', user:$scope.currentUser.id}).then(function(readings){$scope.readings = readings;});
 	    $scope.addTime = function() {
 			$scope.time++;
 			$scope.timeChart.series[0].data.push([$scope.time, $scope.volume*100]);
 			$scope.timeChart.series[1].data.push([$scope.time, $scope.volume*Math.random()*100]);
+			
+
 			if($scope.time >= 100){$scope.timeChart.series[0].data.shift();$scope.timeChart.series[1].data.shift()}
 			//TODO: GRAPH THRESHOLD TIME
 			if ($scope.volume*100 > 10){$scope.thresholdTime++; $scope.thresholdChart.series[0].data = [$scope.thresholdTime]}
+
+
 			else{
 				if ($scope.thresholdTime > 10){
 					var newReading = {};
@@ -97,12 +97,7 @@ angular.module( 'inspire.home', [])
 			}
 		};
 		//$timeout(function() { $interval($scope.addTime, 100); }, 2000);
-	    
-
-
-	    $scope.start = function(){
-	    	if (!$scope.isRunning){$interval($scope.addTime, 100);$scope.isRunning=!$scope.isRunning}
-	    };
+	    $scope.start = function(){if (!$scope.isRunning){$interval($scope.addTime, 100);$scope.isRunning=!$scope.isRunning}};
 	   	$scope.stop = function(){$scope.isRunning=!$scope.isRunning;};
 	    function createAudioMeter(audioContext,clipLevel,averaging,clipLag) {
 			var processor = audioContext.createScriptProcessor(512);

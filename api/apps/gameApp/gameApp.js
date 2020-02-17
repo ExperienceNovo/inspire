@@ -2,5 +2,10 @@
 module.exports = {
 
 	//GAME / TEMPLATE
+
+	static:{
+		//just generalize
+
+	}
 	
 };
