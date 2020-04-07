@@ -44,7 +44,7 @@
     "machinepack-redis": "^2.0.2",
     "merge-defaults": "0.2.2",
     "merge-dictionaries": "1.0.0",
-    "minimist": "0.0.10",
+    "minimist": "1.2.3",
     "nodemailer": "^1.8.0",
     "orbit-db": "^0.23.1",
     "parley": "^3.3.4",
