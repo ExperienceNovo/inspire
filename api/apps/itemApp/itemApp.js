@@ -1,13 +1,9 @@
 //CRE8.INSPIRO.ITEM.ALPHA
 var App = {
-
 	//IMPORT ACTIONS
-	
 	//SMART ITEMS.. 
 	//ACTION ON ITEMS..
 	//BREATHE ACTION
 	//INSPIRE 'ITEM'
-
 };
-
 module.exports = App;
