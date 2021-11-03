@@ -78,7 +78,7 @@
     "skipper": "^0.9.0-0",
     "sort-route-addresses": "^0.0.3",
     "uid-safe": "2.1.5",
-    "validator": "~3.28.0",
+    "validator": "~13.7.0",
     "vary": "1.1.2",
     "whelk": "^6.0.1"
   },
