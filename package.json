@@ -15,7 +15,7 @@
   ],
   "dependencies": {
     "@sailshq/lodash": "^3.10.2",
-    "async": "2.5.0",
+    "async": "2.6.4",
     "bcryptjs": "~2.1.0",
     "captains-log": "^2.0.0",
     "chalk": "2.3.0",
